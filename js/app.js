@@ -86,24 +86,26 @@
    * These are loaded remotely so the first repo stays tiny.
    * Before production, copy/host your own GTA map tiles and update these URLs.
    */
+  const DISPLAY_MAX_ZOOM = 8;
+
   const TILE_LAYERS = {
     atlas: {
       label: "Atlas",
       url: "https://raw.githubusercontent.com/Trusted-Studios/mapStyles/main/styleAtlas/{z}/{x}/{y}.jpg",
       minZoom: 0,
-      maxZoom: 5
+      nativeMaxZoom: 5
     },
     satellite: {
       label: "Satellite",
       url: "https://raw.githubusercontent.com/Trusted-Studios/mapStyles/main/styleSatelite/{z}/{x}/{y}.jpg",
       minZoom: 0,
-      maxZoom: 8
+      nativeMaxZoom: 8
     },
     grid: {
       label: "Grid",
       url: "https://raw.githubusercontent.com/Trusted-Studios/mapStyles/main/styleGrid/{z}/{x}/{y}.png",
       minZoom: 0,
-      maxZoom: 5
+      nativeMaxZoom: 5
     }
   };
 
@@ -142,7 +144,7 @@
     center: DEFAULT_VIEW.center,
     zoom: DEFAULT_VIEW.zoom,
     minZoom: 1,
-    maxZoom: 8,
+    maxZoom: DISPLAY_MAX_ZOOM,
     maxBounds: L.latLngBounds(
       L.latLng(-4000, -5500),
       L.latLng(8000, 6000)
@@ -169,8 +171,8 @@
 
     loadedLayers[name] = L.tileLayer(config.url, {
       minZoom: config.minZoom,
-      maxZoom: config.maxZoom,
-      maxNativeZoom: config.maxZoom,
+      maxZoom: DISPLAY_MAX_ZOOM,
+      maxNativeZoom: config.nativeMaxZoom,
       noWrap: true,
       keepBuffer: 3,
       updateWhenIdle: true
@@ -670,10 +672,7 @@
       activeTileLayer = nextLayer;
       activeLayerName = nextName;
 
-      map.setMaxZoom(TILE_LAYERS[nextName].maxZoom);
-      if (map.getZoom() > TILE_LAYERS[nextName].maxZoom) {
-        map.setZoom(TILE_LAYERS[nextName].maxZoom);
-      }
+      map.setMaxZoom(DISPLAY_MAX_ZOOM);
 
       layerLabel.textContent = TILE_LAYERS[nextName].label;
 
