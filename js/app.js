@@ -339,7 +339,14 @@
         <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
         <circle cx="12" cy="10" r="2.5"></circle>
       </svg>
-    `
+    `,
+    house: `
+    <svg viewBox="0 0 24 24">
+      <path d="M3 11 12 3l9 8"></path>
+      <path d="M5 10v10h14V10"></path>
+      <path d="M9 20v-6h6v6"></path>
+    </svg>
+   `
   };
 
   function getCategoryMeta(category) {
