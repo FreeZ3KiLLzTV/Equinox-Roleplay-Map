@@ -1,111 +1,84 @@
 # Equinox Roleplay — Key Locations Map
 
-Starter version of the Equinox Roleplay interactive San Andreas map.
+This version uses your actual Equinox location data and your full postal dataset.
 
-This first version is intentionally simple:
+## What changed
 
-- Plain HTML / CSS / JavaScript
-- No npm
-- No build process
-- Leaflet interactive map
-- GTA/FiveM coordinates
-- Search
-- Category filters
-- Layer selector
-- Location sidebar
-- Custom map markers
-- Responsive/mobile layout
+- Added **1,738 Equinox postals**
+- Locations automatically calculate their nearest postal
+- Searching a postal now gives you a direct **Postal** result
+- Added your supplied businesses and services
+- Added Mission Row PD and State Police Chumash
+- Added both General Crafting locations
+- Added the Courthouse
+- Added Bolingbroke Penitentiary
+- Added Vespucci Medical
+- Added dealership locations
+- Renamed the old PDM location to **911 Autos**
+- Renamed the aircraft dealer to **Pegasus Enterprises**
 
-## Previewing it
+## Updating the repo
 
-### Option 1 — GitHub Pages
+Replace your existing files with the contents of this folder.
 
-1. Put all of these files in the root of your empty repository.
-2. Commit and push them.
-3. Open the repository on GitHub.
-4. Go to **Settings → Pages**.
-5. Under **Build and deployment**, choose **Deploy from a branch**.
-6. Select:
-   - Branch: `main`
-   - Folder: `/ (root)`
-7. Save.
+New file:
 
-GitHub will give you a URL similar to:
+`js/postals.js`
 
-`https://YOUR-USERNAME.github.io/YOUR-REPO/`
+Make sure `index.html` loads scripts in this order:
 
-### Option 2 — VS Code
+```html
+<script src="./js/postals.js"></script>
+<script src="./js/locations.js"></script>
+<script src="./js/app.js"></script>
+```
 
-If you use the Live Server extension:
+## Adding a new key location
 
-1. Open this repository in VS Code.
-2. Right-click `index.html`.
-3. Click **Open with Live Server**.
-
-## Editing locations
-
-Open:
+Edit:
 
 `js/locations.js`
 
-A location looks like:
+Example:
 
 ```js
 {
-  id: "mission-row-pd",
-  name: "Mission Row Police Department",
-  category: "law-enforcement",
-  categoryLabel: "Law Enforcement",
-  subtitle: "Los Santos Police Department",
-  postal: "125",
-  x: 425.13,
-  y: -979.55,
-  description: "Primary police headquarters.",
+  id: "my-new-business",
+  name: "My New Business",
+  category: "business",
+  categoryLabel: "Business",
+  subtitle: "Player Business",
+  x: 123.45,
+  y: -678.90,
+  description: "Description goes here.",
   link: "#"
 }
 ```
 
-Use normal FiveM coordinates.
+You **do not need to enter a postal**.
 
-The map code automatically converts:
+The map finds the closest postal from your actual `postals.js` dataset.
 
-`X, Y`
+## Important note
 
-into Leaflet:
+`Light it Up` and `Bayside` were supplied at the exact same coordinates:
 
-`[Y, X]`
+`-1558.68, -438.74`
 
-## Categories included
+They are both included as provided. Their map markers will overlap, although both remain accessible from the sidebar/search.
 
-- `law-enforcement`
-- `government`
-- `medical`
-- `mechanic`
-- `business`
-- `dealership`
-- `public-service`
-- `other`
+## Dealership positions used
 
-## Important — current map tiles are temporary
+The map uses the dealership `openShowroom` positions from the supplied dealership config.
 
-For the first visual preview, the map loads GTA map tiles remotely from:
+- 911 Autos — old default PDM showroom
+- Luxury Autos
+- Boat Dealer
+- Pegasus Enterprises — aircraft dealer
+- Truck Dealer
 
-`Trusted-Studios/mapStyles`
+## Still temporary
 
-That keeps this starter repository very small.
+The GTA map tiles are still loaded remotely for this design/testing stage.
 
-Do not treat that external dependency as the finished production setup.
-
-Once the UI is approved, the next step is to place/self-host the GTA map tiles in this repository or another Equinox-controlled location and change the URLs in:
-
-`js/app.js`
-
-## Next phase after design approval
-
-1. Replace demo locations with Equinox locations.
-2. Add your actual postals.
-3. Add department/business branding.
-4. Self-host GTA map tiles.
-5. Host the map.
-6. Connect the Equinox map subdomain.
-7. Embed it into the Mintlify documentation.
+Once the map content and appearance are approved, the next step is self-hosting those map tiles before connecting the Equinox domain and Mintlify.
