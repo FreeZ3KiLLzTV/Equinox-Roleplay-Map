@@ -50,25 +50,17 @@
       label: "Mechanics",
       icon: "wrench"
     },
-    business: {
-      label: "Businesses",
+    food: {
+      label: "Food & Drink",
       icon: "store"
     },
     dealership: {
       label: "Dealerships",
       icon: "car"
     },
-    "public-service": {
-      label: "Public Services",
+    "public": {
+      label: "Public",
       icon: "map"
-    },
-    crafting: {
-      label: "Crafting",
-      icon: "hammer"
-    },
-    corrections: {
-      label: "Corrections",
-      icon: "lock"
     },
     postal: {
       label: "Postal",
