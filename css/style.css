@@ -917,24 +917,24 @@ button {
   background: #d77835;
 }
 
-.category-business {
+.category-food {
   background: #4d9a70;
+}
+
+.category-smoke-shop {
+  background: #7a659c;
 }
 
 .category-dealership {
   background: #8b63ce;
 }
 
-.category-public-service {
+.category-public {
   background: #4f829d;
 }
 
-.category-crafting {
+.category-jobs {
   background: #9a6b3f;
-}
-
-.category-corrections {
-  background: #596474;
 }
 
 .category-postal {
