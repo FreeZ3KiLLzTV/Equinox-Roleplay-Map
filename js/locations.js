@@ -198,8 +198,8 @@ window.EQUINOX_LOCATIONS = [
     "categoryLabel": "Dealership",
     "icon": "car",
     "subtitle": "Luxury & Performance Vehicles",
-    "x": -1257.4,
-    "y": -369.12,
+    "x": -2213.51,
+    "y": -387.47,
     "description": "Dealership specializing in luxury and performance vehicles.",
     "link": "#"
   },
