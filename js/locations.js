@@ -358,5 +358,17 @@ window.EQUINOX_LOCATIONS = [
     "y": 270.29,
     "description": "The central location to purchase property. Be sure to protect your investments.",
     "link": "#"
+  },
+  {
+    "id": "parsons-rehab",
+    "name": "Rehab Facility",
+    "category": "government",
+    "categoryLabel": "Government",
+    "icon": "medical",
+    "subtitle": "Rehab Facility",
+    "x": -1516.61,
+    "y": 849.46,
+    "description": "Fight your addiction.",
+    "link": "#"
   }
 ];
