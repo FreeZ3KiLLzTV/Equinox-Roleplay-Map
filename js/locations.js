@@ -4,7 +4,7 @@ window.EQUINOX_LOCATIONS = [
     "name": "The Fern",
     "category": "business",
     "categoryLabel": "Business",
-    "subtitle": "Cafe/Restaurant",
+    "subtitle": "Cafe & Restaurant",
     "x": -1109.3,
     "y": -1346.19,
     "description": "Player-operated cafe and restaurant.",
@@ -27,8 +27,8 @@ window.EQUINOX_LOCATIONS = [
     "category": "business",
     "categoryLabel": "Business",
     "subtitle": "Cafe",
-    "x": 1121.79,
-    "y": -646.82,
+    "x": 1123.713,
+    "y": -649.492,
     "description": "Cafe and community business location.",
     "link": "#"
   },
@@ -37,7 +37,7 @@ window.EQUINOX_LOCATIONS = [
     "name": "Light it Up",
     "category": "business",
     "categoryLabel": "Business",
-    "subtitle": "Smoke Shop",
+    "subtitle": "Player Business",
     "x": -1558.68,
     "y": -438.74,
     "description": "Player-operated business location.",
@@ -71,9 +71,9 @@ window.EQUINOX_LOCATIONS = [
     "category": "mechanic",
     "categoryLabel": "Mechanic",
     "subtitle": "Automotive Services",
-    "x": -1558.68,
-    "y": -438.74,
-    "description": "Automotive service location.",
+    "x": 100.145,
+    "y": 6569.512,
+    "description": "Automotive service location in northern San Andreas.",
     "link": "#"
   },
   {
@@ -85,18 +85,18 @@ window.EQUINOX_LOCATIONS = [
     "x": 450.9,
     "y": -1020.6,
     "description": "Mission Row station serving as a primary Los Santos Police Department facility.",
-    "link": "https://docs.equinoxroleplay.com/los-santos-police"
+    "link": "#"
   },
   {
     "id": "state-police-chumash",
-    "name": "State Police",
+    "name": "State Police - Chumash",
     "category": "law-enforcement",
     "categoryLabel": "Law Enforcement",
     "subtitle": "San Andreas State Police",
     "x": -3142.08,
     "y": 1386.73,
     "description": "San Andreas State Police facility serving the Chumash and western highway corridor.",
-    "link": "https://docs.equinoxroleplay.com/san-andreas-state-police"
+    "link": "#"
   },
   {
     "id": "general-crafting-grapeseed",
@@ -122,14 +122,14 @@ window.EQUINOX_LOCATIONS = [
   },
   {
     "id": "courthouse",
-    "name": "San Andreas Governmental Complex",
+    "name": "Courthouse",
     "category": "government",
     "categoryLabel": "Government",
     "subtitle": "Department of Justice",
     "x": -550.1532,
     "y": -196.0362,
     "description": "State courthouse used for judicial proceedings and Department of Justice services.",
-    "link": "https://docs.equinoxroleplay.com/san-andreas-district-courts"
+    "link": "#"
   },
   {
     "id": "davis-supermarket",
@@ -147,10 +147,10 @@ window.EQUINOX_LOCATIONS = [
     "name": "Plastic Surgery",
     "category": "public-service",
     "categoryLabel": "Public Service",
-    "subtitle": "Civilian Services",
+    "subtitle": "Character Services",
     "x": -682.26,
     "y": -187.05,
-    "description": "Public appearance and cosmetic service location.",
+    "description": "Public character appearance and cosmetic service location.",
     "link": "#"
   },
   {
@@ -173,17 +173,6 @@ window.EQUINOX_LOCATIONS = [
     "x": -795.21,
     "y": -1222.48,
     "description": "Medical facility serving Vespucci and the western Los Santos area.",
-    "link": "#"
-  },
-  {
-    "id": "911-autos",
-    "name": "911 Autos",
-    "category": "dealership",
-    "categoryLabel": "Dealership",
-    "subtitle": "Police & EMS Vehicle Dealership",
-    "x": -55.99,
-    "y": -1096.59,
-    "description": "Specialized vehicle dealership for authorized police and emergency-service fleets.",
     "link": "#"
   },
   {
@@ -228,6 +217,94 @@ window.EQUINOX_LOCATIONS = [
     "x": 1214.37,
     "y": -3204.53,
     "description": "Dealership for vans, commercial vehicles and industrial trucks.",
+    "link": "#"
+  },
+  {
+    "id": "bennys",
+    "name": "Benny's Motorworks",
+    "category": "mechanic",
+    "categoryLabel": "Mechanic",
+    "subtitle": "Automotive Services",
+    "x": -219.092,
+    "y": -1275.0,
+    "description": "Vehicle repair, customization and performance services.",
+    "link": "#"
+  },
+  {
+    "id": "premium-deluxe-motorsport",
+    "name": "Premium Deluxe Motorsport",
+    "category": "dealership",
+    "categoryLabel": "Dealership",
+    "subtitle": "Vehicle Dealership",
+    "x": -1023.468,
+    "y": -1378.659,
+    "description": "Public vehicle dealership serving residents of San Andreas.",
+    "link": "#"
+  },
+  {
+    "id": "bennys-harmony",
+    "name": "Benny's Harmony",
+    "category": "mechanic",
+    "categoryLabel": "Mechanic",
+    "subtitle": "Automotive Services",
+    "x": 560.147,
+    "y": 2785.976,
+    "description": "Benny's automotive service location in Harmony.",
+    "link": "#"
+  },
+  {
+    "id": "powerplant-county",
+    "name": "Powerplant County",
+    "category": "public-service",
+    "categoryLabel": "Public Service",
+    "subtitle": "Power Infrastructure",
+    "x": 2730.454,
+    "y": 1569.512,
+    "description": "County power generation and infrastructure site.",
+    "link": "#"
+  },
+  {
+    "id": "powerplant-city",
+    "name": "Powerplant City",
+    "category": "public-service",
+    "categoryLabel": "Public Service",
+    "subtitle": "Power Infrastructure",
+    "x": 696.388,
+    "y": 130.488,
+    "description": "Los Santos power generation and infrastructure site.",
+    "link": "#"
+  },
+  {
+    "id": "diamond-casino",
+    "name": "Diamond Casino",
+    "category": "business",
+    "categoryLabel": "Business",
+    "subtitle": "Casino & Entertainment",
+    "x": 959.821,
+    "y": 48.171,
+    "description": "Casino and entertainment destination in Los Santos.",
+    "link": "#"
+  },
+  {
+    "id": "goldline-casino",
+    "name": "Goldline Casino",
+    "category": "business",
+    "categoryLabel": "Business",
+    "subtitle": "Casino & Entertainment",
+    "x": 745.656,
+    "y": -812.094,
+    "description": "Casino and entertainment destination in Los Santos.",
+    "link": "#"
+  },
+  {
+    "id": "911-autos",
+    "name": "911 Autos",
+    "category": "dealership",
+    "categoryLabel": "Dealership",
+    "subtitle": "Police & EMS Vehicle Dealership",
+    "x": -55.99,
+    "y": -1096.59,
+    "description": "Specialized vehicle dealership for authorized police and emergency-service fleets.",
     "link": "#"
   }
 ];
