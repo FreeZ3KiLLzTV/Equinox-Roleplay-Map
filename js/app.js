@@ -54,6 +54,10 @@
       label: "Food & Drink",
       icon: "store"
     },
+    "smoke-shop": {
+      label: "Smoke Shop",
+      icon: "store"
+    },
     dealership: {
       label: "Dealerships",
       icon: "car"
@@ -365,8 +369,25 @@
   let searchValue = "";
   let selectedId = null;
 
+  const CATEGORY_ORDER = [
+    "law-enforcement",
+    "government",
+    "medical",
+    "mechanic",
+    "dealership",
+    "food",
+    "smoke-shop",
+    "public",
+    "jobs"
+  ];
+
   function availableCategories() {
-    return [...new Set(locations.map((location) => location.category))];
+    const used = new Set(locations.map((location) => location.category));
+
+    return [
+      ...CATEGORY_ORDER.filter((category) => used.has(category)),
+      ...[...used].filter((category) => !CATEGORY_ORDER.includes(category))
+    ];
   }
 
   function renderFilters() {
