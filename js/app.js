@@ -2,6 +2,36 @@
   "use strict";
 
   const locations = window.EQUINOX_LOCATIONS || [];
+  const postals = window.EQUINOX_POSTALS || [];
+
+  function findNearestPostal(x, y) {
+    if (!postals.length) return null;
+
+    let nearest = null;
+    let nearestDistanceSquared = Infinity;
+
+    for (const postal of postals) {
+      const dx = postal.x - x;
+      const dy = postal.y - y;
+      const distanceSquared = dx * dx + dy * dy;
+
+      if (distanceSquared < nearestDistanceSquared) {
+        nearest = postal;
+        nearestDistanceSquared = distanceSquared;
+      }
+    }
+
+    return nearest;
+  }
+
+  // Postal is derived from the server's actual postal dataset so new
+  // locations only need X/Y coordinates.
+  locations.forEach((location) => {
+    if (!location.postal) {
+      const nearest = findNearestPostal(location.x, location.y);
+      location.postal = nearest?.code || "—";
+    }
+  });
 
   const CATEGORY_META = {
     "law-enforcement": {
@@ -31,6 +61,18 @@
     "public-service": {
       label: "Public Services",
       icon: "map"
+    },
+    crafting: {
+      label: "Crafting",
+      icon: "hammer"
+    },
+    corrections: {
+      label: "Corrections",
+      icon: "lock"
+    },
+    postal: {
+      label: "Postal",
+      icon: "pin"
     },
     other: {
       label: "Other",
@@ -189,6 +231,21 @@
         <path d="M9 3v15M15 6v15"></path>
       </svg>
     `,
+    hammer: `
+      <svg viewBox="0 0 24 24">
+        <path d="m14 5 5 5"></path>
+        <path d="m12 7 5 5"></path>
+        <path d="m15.5 10.5-8.8 8.8a2.1 2.1 0 0 1-3-3l8.8-8.8"></path>
+        <path d="M13 4 9 8"></path>
+      </svg>
+    `,
+    lock: `
+      <svg viewBox="0 0 24 24">
+        <rect x="5" y="10" width="14" height="10" rx="2"></rect>
+        <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+        <path d="M12 14v2"></path>
+      </svg>
+    `,
     pin: `
       <svg viewBox="0 0 24 24">
         <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
@@ -223,6 +280,7 @@
   // ---------- Markers ----------
 
   const markerById = new Map();
+  let postalIndicator = null;
 
   function escapeHtml(value) {
     return String(value ?? "")
@@ -392,28 +450,119 @@
     `;
   }
 
+  function findPostalMatches(query) {
+    const clean = query.trim().toLowerCase();
+
+    if (!clean) return [];
+
+    return postals
+      .filter((postal) => String(postal.code).toLowerCase().includes(clean))
+      .slice(0, 8);
+  }
+
+  function postalCardTemplate(postal) {
+    return `
+      <button
+        class="location-card postal-card"
+        data-postal-code="${escapeHtml(postal.code)}"
+        type="button"
+      >
+        <span class="location-icon category-postal">
+          ${getIconMarkup("postal")}
+        </span>
+
+        <span class="location-info">
+          <strong>Postal ${escapeHtml(postal.code)}</strong>
+          <span>Map Postal</span>
+        </span>
+
+        <span class="postal-pill">GO</span>
+      </button>
+    `;
+  }
+
+  function focusPostal(code) {
+    const postal = postals.find((item) => String(item.code) === String(code));
+    if (!postal) return;
+
+    if (postalIndicator) {
+      map.removeLayer(postalIndicator);
+    }
+
+    postalIndicator = L.circleMarker([postal.y, postal.x], {
+      radius: 11,
+      color: "#ffffff",
+      weight: 2,
+      fillColor: "#5f9cff",
+      fillOpacity: 0.9
+    })
+      .addTo(map)
+      .bindPopup(`
+        <div class="location-popup">
+          <div class="popup-header">
+            <div class="popup-icon category-postal">
+              ${getIconMarkup("postal")}
+            </div>
+            <div class="popup-title">
+              <strong>Postal ${escapeHtml(postal.code)}</strong>
+              <span>San Andreas Postal</span>
+            </div>
+          </div>
+          <div class="popup-body">
+            <div class="popup-meta">
+              <span>X ${Number(postal.x).toFixed(2)}</span>
+              <span>Y ${Number(postal.y).toFixed(2)}</span>
+            </div>
+            <p>Postal location from the Equinox Roleplay postal system.</p>
+          </div>
+        </div>
+      `, {
+        maxWidth: 330,
+        minWidth: 300
+      });
+
+    map.flyTo([postal.y, postal.x], Math.max(map.getZoom(), 5), {
+      duration: 0.7
+    });
+
+    window.setTimeout(() => postalIndicator?.openPopup(), 450);
+    closeMobileSidebar();
+  }
+
   function renderLocations() {
     const filtered = locations.filter(locationMatches);
+    const postalMatches = searchValue.trim() ? findPostalMatches(searchValue) : [];
 
-    resultCount.textContent = `${filtered.length} ${
-      filtered.length === 1 ? "location" : "locations"
+    const totalResults = filtered.length + postalMatches.length;
+
+    resultCount.textContent = `${totalResults} ${
+      totalResults === 1 ? "result" : "results"
     }`;
 
-    if (!filtered.length) {
+    if (!totalResults) {
       locationList.innerHTML = `
         <div class="empty-state">
           <strong>No locations found</strong>
-          <span>Try another search or clear your filters.</span>
+          <span>Try another name, category or postal.</span>
         </div>
       `;
       return;
     }
 
-    locationList.innerHTML = filtered.map(cardTemplate).join("");
+    locationList.innerHTML = [
+      ...postalMatches.map(postalCardTemplate),
+      ...filtered.map(cardTemplate)
+    ].join("");
 
-    locationList.querySelectorAll(".location-card").forEach((card) => {
+    locationList.querySelectorAll("[data-location-id]").forEach((card) => {
       card.addEventListener("click", () => {
         focusLocation(card.dataset.locationId);
+      });
+    });
+
+    locationList.querySelectorAll("[data-postal-code]").forEach((card) => {
+      card.addEventListener("click", () => {
+        focusPostal(card.dataset.postalCode);
       });
     });
   }
@@ -553,6 +702,12 @@
     });
 
     selectedId = null;
+
+    if (postalIndicator) {
+      map.removeLayer(postalIndicator);
+      postalIndicator = null;
+    }
+
     renderLocations();
     map.closePopup();
   });
