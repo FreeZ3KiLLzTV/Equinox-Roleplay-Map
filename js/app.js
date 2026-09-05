@@ -62,6 +62,10 @@
       label: "Public",
       icon: "map"
     },
+    "jobs": {
+      label: "Public Jobs",
+      icon: "hammer"
+    },
     postal: {
       label: "Postal",
       icon: "pin"
