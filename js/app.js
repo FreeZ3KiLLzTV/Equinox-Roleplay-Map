@@ -341,12 +341,20 @@
       </svg>
     `,
     house: `
-    <svg viewBox="0 0 24 24">
-      <path d="M3 11 12 3l9 8"></path>
-      <path d="M5 10v10h14V10"></path>
-      <path d="M9 20v-6h6v6"></path>
-    </svg>
-   `
+      <svg viewBox="0 0 24 24">
+        <path d="M3 11 12 3l9 8"></path>
+        <path d="M5 10v10h14V10"></path>
+        <path d="M9 20v-6h6v6"></path>
+      </svg>
+    `,
+    briefcase: `
+      <svg viewBox="0 0 24 24">
+        <rect x="3" y="7" width="18" height="12" rx="2"></rect>
+        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+        <path d="M3 12h18"></path>
+        <path d="M10 12v2h4v-2"></path>
+      </svg>
+    `,
   };
 
   function getCategoryMeta(category) {
