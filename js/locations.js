@@ -78,14 +78,14 @@ window.EQUINOX_LOCATIONS = [
   },
   {
     "id": "mission-row-pd",
-    "name": "Los Santos Police - Mission Row",
+    "name": "Mission Row Police Department",
     "category": "law-enforcement",
     "categoryLabel": "Law Enforcement",
     "subtitle": "Los Santos Police Department",
     "x": 450.9,
     "y": -1020.6,
     "description": "Mission Row station serving as a primary Los Santos Police Department facility.",
-    "link": "#"
+    "link": "https://docs.equinoxroleplay.com/los-santos-police"
   },
   {
     "id": "state-police-chumash",
@@ -96,7 +96,7 @@ window.EQUINOX_LOCATIONS = [
     "x": -3142.08,
     "y": 1386.73,
     "description": "San Andreas State Police facility serving the Chumash and western highway corridor.",
-    "link": "#"
+    "link": "https://docs.equinoxroleplay.com/san-andreas-state-police"
   },
   {
     "id": "general-crafting-grapeseed",
@@ -129,7 +129,7 @@ window.EQUINOX_LOCATIONS = [
     "x": -550.1532,
     "y": -196.0362,
     "description": "State courthouse used for judicial proceedings and Department of Justice services.",
-    "link": "#"
+    "link": "https://docs.equinoxroleplay.com/san-andreas-district-courts"
   },
   {
     "id": "davis-supermarket",
@@ -162,7 +162,7 @@ window.EQUINOX_LOCATIONS = [
     "x": 1746.81,
     "y": 2519.49,
     "description": "San Andreas state correctional facility.",
-    "link": "#"
+    "link": "https://docs.equinoxroleplay.com/department-of-corrections"
   },
   {
     "id": "vespucci-medical",
@@ -173,7 +173,7 @@ window.EQUINOX_LOCATIONS = [
     "x": -795.21,
     "y": -1222.48,
     "description": "Medical facility serving Vespucci and the western Los Santos area.",
-    "link": "#"
+    "link": "https://docs.equinoxroleplay.com/san-andreas-medical-services"
   },
   {
     "id": "luxury-autos",
@@ -306,5 +306,16 @@ window.EQUINOX_LOCATIONS = [
     "y": -1096.59,
     "description": "Specialized vehicle dealership for authorized police and emergency-service fleets.",
     "link": "#"
+  },
+  {
+    "id": "sandy-medical",
+    "name": "Sandy Medical",
+    "category": "medical",
+    "categoryLabel": "Medical",
+    "subtitle": "Medical Center",
+    "x": 1833.072,
+    "y": 3697.561,
+    "description": "Medical facility serving Sandy Shores and the surrounding Blaine County area.",
+    "link": "https://docs.equinoxroleplay.com/san-andreas-medical-services"
   }
 ];
