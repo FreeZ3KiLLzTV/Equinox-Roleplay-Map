@@ -370,5 +370,17 @@ window.EQUINOX_LOCATIONS = [
     "y": 849.46,
     "description": "Fight your addiction.",
     "link": "#"
+  },
+  {
+    "id": "oil-rig",
+    "name": "Oil Rig Job",
+    "category": "public",
+    "categoryLabel": "Public",
+    "icon": "medical",
+    "subtitle": "Oil Rig Job",
+    "x": 1395.54,
+    "y": -3278.19,
+    "description": "Get some easy money.",
+    "link": "#"
   }
 ];
