@@ -24,8 +24,6 @@
     return nearest;
   }
 
-  // Postal is derived from the server's actual postal dataset so new
-  // locations only need X/Y coordinates.
   locations.forEach((location) => {
     if (!location.postal) {
       const nearest = findNearestPostal(location.x, location.y);
@@ -80,12 +78,6 @@
     }
   };
 
-  /*
-   * TEMPORARY PREVIEW TILES
-   * -----------------------
-   * These are loaded remotely so the first repo stays tiny.
-   * Before production, copy/host your own GTA map tiles and update these URLs.
-   */
   const DISPLAY_MAX_ZOOM = 8;
 
   const TILE_LAYERS = {
@@ -183,8 +175,6 @@
 
   let activeTileLayer = buildTileLayer(activeLayerName).addTo(map);
 
-  // ---------- Icons ----------
-
   const SVG_ICONS = {
     shield: `
       <svg viewBox="0 0 24 24">
@@ -248,6 +238,102 @@
         <path d="M12 14v2"></path>
       </svg>
     `,
+
+    coffee: `
+      <svg viewBox="0 0 24 24">
+        <path d="M5 8h11v7a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V8Z"></path>
+        <path d="M16 10h2a3 3 0 0 1 0 6h-2"></path>
+        <path d="M8 4v2M12 3v3M15 4v2"></path>
+      </svg>
+    `,
+    burger: `
+      <svg viewBox="0 0 24 24">
+        <path d="M5 10h14"></path>
+        <path d="M4 14h16"></path>
+        <path d="M6 18h12"></path>
+        <path d="M5 10a7 5 0 0 1 14 0"></path>
+        <path d="M5 14c1 1 2 1 3 0 1 1 2 1 3 0 1 1 2 1 3 0 1 1 2 1 3 0"></path>
+      </svg>
+    `,
+    smoke: `
+      <svg viewBox="0 0 24 24">
+        <path d="M4 15h10v3H4z"></path>
+        <path d="M14 15h3v3h-3"></path>
+        <path d="M18 9c2 0 2-3 0-3"></path>
+        <path d="M15 12c3 0 4-5 1-6"></path>
+      </svg>
+    `,
+    gavel: `
+      <svg viewBox="0 0 24 24">
+        <path d="m14 5 5 5"></path>
+        <path d="m12 7 5 5"></path>
+        <path d="m4 20 8-8"></path>
+        <path d="m3 21 3-3"></path>
+        <path d="M13 4 9 8"></path>
+      </svg>
+    `,
+    prison: `
+      <svg viewBox="0 0 24 24">
+        <rect x="4" y="3" width="16" height="18" rx="1"></rect>
+        <path d="M8 3v18M12 3v18M16 3v18"></path>
+        <path d="M4 9h16M4 15h16"></path>
+      </svg>
+    `,
+    plane: `
+      <svg viewBox="0 0 24 24">
+        <path d="M22 16 13 12V5a2 2 0 0 0-4 0v7l-7 4v2l7-2v3l-2 2v1l4-1 4 1v-1l-2-2v-3l9 2v-2Z"></path>
+      </svg>
+    `,
+    boat: `
+      <svg viewBox="0 0 24 24">
+        <path d="M4 13h16l-3 6H7l-3-6Z"></path>
+        <path d="M8 13V6h7l3 7"></path>
+        <path d="M2 21c2 1 4 1 6 0 2 1 4 1 6 0 2 1 4 1 6 0"></path>
+      </svg>
+    `,
+    truck: `
+      <svg viewBox="0 0 24 24">
+        <path d="M3 6h11v10H3z"></path>
+        <path d="M14 10h4l3 3v3h-7z"></path>
+        <circle cx="7" cy="18" r="2"></circle>
+        <circle cx="18" cy="18" r="2"></circle>
+      </svg>
+    `,
+    casino: `
+      <svg viewBox="0 0 24 24">
+        <rect x="4" y="4" width="16" height="16" rx="3"></rect>
+        <circle cx="8" cy="8" r="1"></circle>
+        <circle cx="16" cy="8" r="1"></circle>
+        <circle cx="12" cy="12" r="1"></circle>
+        <circle cx="8" cy="16" r="1"></circle>
+        <circle cx="16" cy="16" r="1"></circle>
+      </svg>
+    `,
+    power: `
+      <svg viewBox="0 0 24 24">
+        <path d="m13 2-7 12h6l-1 8 7-12h-6l1-8Z"></path>
+      </svg>
+    `,
+    grocery: `
+      <svg viewBox="0 0 24 24">
+        <path d="M4 5h2l2 10h9l2-7H7"></path>
+        <circle cx="10" cy="19" r="1.5"></circle>
+        <circle cx="17" cy="19" r="1.5"></circle>
+      </svg>
+    `,
+    scissors: `
+      <svg viewBox="0 0 24 24">
+        <circle cx="6" cy="7" r="3"></circle>
+        <circle cx="6" cy="17" r="3"></circle>
+        <path d="m8.5 8.5 11 8.5"></path>
+        <path d="m8.5 15.5 11-8.5"></path>
+      </svg>
+    `,
+    tools: `
+      <svg viewBox="0 0 24 24">
+        <path d="M14.5 6.5a4 4 0 0 0-5 5L4 17l3 3 5.5-5.5a4 4 0 0 0 5-5l-2.5 2.5-3-3 2.5-2.5Z"></path>
+      </svg>
+    `,
     pin: `
       <svg viewBox="0 0 24 24">
         <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
@@ -260,9 +346,20 @@
     return CATEGORY_META[category] || CATEGORY_META.other;
   }
 
-  function getIconMarkup(category) {
-    const iconName = getCategoryMeta(category).icon;
+  function getIconMarkup(iconName) {
     return SVG_ICONS[iconName] || SVG_ICONS.pin;
+  }
+
+  function getLocationIconName(location) {
+    if (location?.icon && SVG_ICONS[location.icon]) {
+      return location.icon;
+    }
+
+    return getCategoryMeta(location?.category).icon;
+  }
+
+  function getLocationIconMarkup(location) {
+    return getIconMarkup(getLocationIconName(location));
   }
 
   function createMarkerIcon(location) {
@@ -270,7 +367,7 @@
       className: "custom-marker",
       html: `
         <div class="marker-pin category-${location.category}">
-          ${getIconMarkup(location.category)}
+          ${getLocationIconMarkup(location)}
         </div>
       `,
       iconSize: [34, 42],
@@ -278,8 +375,6 @@
       popupAnchor: [0, -34]
     });
   }
-
-  // ---------- Markers ----------
 
   const markerById = new Map();
   let postalIndicator = null;
@@ -315,7 +410,7 @@
       <div class="location-popup">
         <div class="popup-header">
           <div class="popup-icon category-${location.category}">
-            ${getIconMarkup(location.category)}
+            ${getLocationIconMarkup(location)}
           </div>
           <div class="popup-title">
             <strong>${safeName}</strong>
@@ -356,8 +451,6 @@
 
     markerById.set(location.id, marker);
   });
-
-  // ---------- Sidebar ----------
 
   const locationList = document.getElementById("locationList");
   const locationSearch = document.getElementById("locationSearch");
@@ -456,7 +549,7 @@
         type="button"
       >
         <span class="location-icon category-${escapeHtml(location.category)}">
-          ${getIconMarkup(location.category)}
+          ${getLocationIconMarkup(location)}
         </span>
 
         <span class="location-info">
@@ -487,7 +580,7 @@
         type="button"
       >
         <span class="location-icon category-postal">
-          ${getIconMarkup("postal")}
+          ${getIconMarkup(getCategoryMeta("postal").icon)}
         </span>
 
         <span class="location-info">
@@ -520,7 +613,7 @@
         <div class="location-popup">
           <div class="popup-header">
             <div class="popup-icon category-postal">
-              ${getIconMarkup("postal")}
+              ${getIconMarkup(getCategoryMeta("postal").icon)}
             </div>
             <div class="popup-title">
               <strong>Postal ${escapeHtml(postal.code)}</strong>
@@ -653,8 +746,6 @@
     }
   });
 
-  // ---------- Layer Picker ----------
-
   const layerToggle = document.getElementById("layerToggle");
   const layerMenu = document.getElementById("layerMenu");
   const layerLabel = document.getElementById("layerLabel");
@@ -710,8 +801,6 @@
     }
   });
 
-  // ---------- Map UI ----------
-
   document.getElementById("resetView").addEventListener("click", () => {
     map.flyTo(DEFAULT_VIEW.center, DEFAULT_VIEW.zoom, {
       duration: 0.7
@@ -762,8 +851,29 @@
 
   mobileOverlay.addEventListener("click", closeMobileSidebar);
 
-  // ---------- Boot ----------
+  function applyBranding() {
+    const brandMark = document.getElementById("brandMark");
+    const logoUrl = window.EQUINOX_MAP_CONFIG?.logoUrl?.trim();
 
+    if (!brandMark || !logoUrl) return;
+
+    const image = document.createElement("img");
+    image.src = logoUrl;
+    image.alt = "Equinox Roleplay";
+    image.decoding = "async";
+
+    image.addEventListener("load", () => {
+      brandMark.classList.add("has-logo");
+      brandMark.replaceChildren(image);
+    });
+
+    image.addEventListener("error", () => {
+      brandMark.classList.remove("has-logo");
+      brandMark.textContent = "E";
+    });
+  }
+
+  applyBranding();
   renderFilters();
   renderLocations();
 
