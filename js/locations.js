@@ -346,5 +346,16 @@ window.EQUINOX_LOCATIONS = [
     "y": 3697.561,
     "description": "Medical facility serving Sandy Shores and the surrounding Blaine County area.",
     "link": "https://docs.equinoxroleplay.com/san-andreas-medical-services"
-  }
+  },
+  {
+    "id": "dynasty8",
+    "name": "Dynasty 8 Realtors",
+    "category": "public",
+    "categoryLabel": "Public",
+    "icon": "house",
+    "subtitle": "Realtor Office",
+    "x": -705.52,
+    "y": 270.29,
+    "description": "The central location to purchase property. Be sure to protect your investments.",
+    "link": "#"
 ];
