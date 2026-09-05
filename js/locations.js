@@ -358,4 +358,5 @@ window.EQUINOX_LOCATIONS = [
     "y": 270.29,
     "description": "The central location to purchase property. Be sure to protect your investments.",
     "link": "#"
+  }
 ];
