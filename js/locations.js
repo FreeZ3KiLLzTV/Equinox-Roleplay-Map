@@ -1,145 +1,233 @@
-/*
- * DEMO LOCATION DATA
- * ------------------
- * These are only here so we can judge the UI.
- * Replace these with Equinox's real coordinates/postals after the design is approved.
- *
- * FiveM coordinates are entered normally:
- *   x: 425.13,
- *   y: -979.55
- *
- * app.js handles Leaflet as [Y, X].
- */
-
 window.EQUINOX_LOCATIONS = [
   {
-    id: "mission-row-pd",
-    name: "Mission Row Police Department",
-    category: "law-enforcement",
-    categoryLabel: "Law Enforcement",
-    subtitle: "Los Santos Police Department",
-    postal: "125",
-    x: 425.13,
-    y: -979.55,
-    description:
-      "Primary Los Santos Police Department headquarters and public-facing police services.",
-    link: "#"
+    "id": "the-fern",
+    "name": "The Fern",
+    "category": "business",
+    "categoryLabel": "Business",
+    "subtitle": "Cafe/Restaurant",
+    "x": -1109.3,
+    "y": -1346.19,
+    "description": "Player-operated cafe and restaurant.",
+    "link": "#"
   },
   {
-    id: "pillbox-medical",
-    name: "Pillbox Medical Center",
-    category: "medical",
-    categoryLabel: "Medical",
-    subtitle: "Emergency Medical Services",
-    postal: "221",
-    x: 307.21,
-    y: -595.31,
-    description:
-      "Primary medical center serving the Los Santos metropolitan area.",
-    link: "#"
+    "id": "up-n-atom",
+    "name": "Up 'N Atom",
+    "category": "business",
+    "categoryLabel": "Business",
+    "subtitle": "Restaurant",
+    "x": 85.88,
+    "y": 285.61,
+    "description": "Restaurant and food service location.",
+    "link": "#"
   },
   {
-    id: "state-courthouse",
-    name: "San Andreas Courthouse",
-    category: "government",
-    categoryLabel: "Government",
-    subtitle: "Department of Justice",
-    postal: "171",
-    x: -545.32,
-    y: -204.12,
-    description:
-      "State judicial facility for court proceedings, hearings and Department of Justice services.",
-    link: "#"
+    "id": "pond-cafe",
+    "name": "Pond Cafe",
+    "category": "business",
+    "categoryLabel": "Business",
+    "subtitle": "Cafe",
+    "x": 1121.79,
+    "y": -646.82,
+    "description": "Cafe and community business location.",
+    "link": "#"
   },
   {
-    id: "bennys",
-    name: "Benny's Motorworks",
-    category: "mechanic",
-    categoryLabel: "Mechanic",
-    subtitle: "Automotive Services",
-    postal: "342",
-    x: -211.55,
-    y: -1324.55,
-    description:
-      "Automotive repair, customization and performance services.",
-    link: "#"
+    "id": "light-it-up",
+    "name": "Light it Up",
+    "category": "business",
+    "categoryLabel": "Business",
+    "subtitle": "Smoke Shop",
+    "x": -1558.68,
+    "y": -438.74,
+    "description": "Player-operated business location.",
+    "link": "#"
   },
   {
-    id: "city-hall",
-    name: "Los Santos City Hall",
-    category: "government",
-    categoryLabel: "Government",
-    subtitle: "Public Services",
-    postal: "182",
-    x: -550.36,
-    y: -191.45,
-    description:
-      "Government offices and public administrative services for Los Santos residents.",
-    link: "#"
+    "id": "los-santos-customs",
+    "name": "Los Santos Customs",
+    "category": "mechanic",
+    "categoryLabel": "Mechanic",
+    "subtitle": "Automotive Services",
+    "x": -360.24,
+    "y": -124.11,
+    "description": "Vehicle repair, customization and automotive services.",
+    "link": "#"
   },
   {
-    id: "premium-deluxe",
-    name: "Premium Deluxe Motorsport",
-    category: "dealership",
-    categoryLabel: "Dealership",
-    subtitle: "Vehicle Dealership",
-    postal: "816",
-    x: -44.37,
-    y: -1098.03,
-    description:
-      "Vehicle dealership serving residents of Los Santos.",
-    link: "#"
+    "id": "craw-customs",
+    "name": "Craw Customs",
+    "category": "mechanic",
+    "categoryLabel": "Mechanic",
+    "subtitle": "Custom Automotive Shop",
+    "x": -686.35,
+    "y": -785.94,
+    "description": "Player-operated automotive repair and customization shop.",
+    "link": "#"
   },
   {
-    id: "sandy-sheriff",
-    name: "Sandy Shores Sheriff's Office",
-    category: "law-enforcement",
-    categoryLabel: "Law Enforcement",
-    subtitle: "Blaine County",
-    postal: "301",
-    x: 1853.19,
-    y: 3689.51,
-    description:
-      "Law enforcement facility serving Sandy Shores and surrounding Blaine County communities.",
-    link: "#"
+    "id": "bayside",
+    "name": "Bayside",
+    "category": "mechanic",
+    "categoryLabel": "Mechanic",
+    "subtitle": "Automotive Services",
+    "x": -1558.68,
+    "y": -438.74,
+    "description": "Automotive service location.",
+    "link": "#"
   },
   {
-    id: "paleto-sheriff",
-    name: "Paleto Bay Sheriff's Office",
-    category: "law-enforcement",
-    categoryLabel: "Law Enforcement",
-    subtitle: "Blaine County",
-    postal: "103",
-    x: -447.02,
-    y: 6013.12,
-    description:
-      "Northern Blaine County law enforcement facility located in Paleto Bay.",
-    link: "#"
+    "id": "mission-row-pd",
+    "name": "Los Santos Police - Mission Row",
+    "category": "law-enforcement",
+    "categoryLabel": "Law Enforcement",
+    "subtitle": "Los Santos Police Department",
+    "x": 450.9,
+    "y": -1020.6,
+    "description": "Mission Row station serving as a primary Los Santos Police Department facility.",
+    "link": "https://docs.equinoxroleplay.com/los-santos-police"
   },
   {
-    id: "legion-services",
-    name: "Legion Square",
-    category: "public-service",
-    categoryLabel: "Public Service",
-    subtitle: "Public Landmark",
-    postal: "205",
-    x: 195.17,
-    y: -933.77,
-    description:
-      "Central Los Santos landmark frequently used for public events and community gatherings.",
-    link: "#"
+    "id": "state-police-chumash",
+    "name": "State Police",
+    "category": "law-enforcement",
+    "categoryLabel": "Law Enforcement",
+    "subtitle": "San Andreas State Police",
+    "x": -3142.08,
+    "y": 1386.73,
+    "description": "San Andreas State Police facility serving the Chumash and western highway corridor.",
+    "link": "https://docs.equinoxroleplay.com/san-andreas-state-police"
   },
   {
-    id: "airport",
-    name: "Los Santos International Airport",
-    category: "public-service",
-    categoryLabel: "Public Service",
-    subtitle: "Transportation",
-    postal: "920",
-    x: -1037.56,
-    y: -2737.72,
-    description:
-      "Primary air transportation hub for the State of San Andreas.",
-    link: "#"
+    "id": "general-crafting-grapeseed",
+    "name": "General Crafting",
+    "category": "crafting",
+    "categoryLabel": "Crafting",
+    "subtitle": "Grapeseed",
+    "x": 1700.7,
+    "y": 4788.54,
+    "description": "Public general crafting location.",
+    "link": "#"
+  },
+  {
+    "id": "general-crafting-south-ls",
+    "name": "General Crafting",
+    "category": "crafting",
+    "categoryLabel": "Crafting",
+    "subtitle": "South Los Santos",
+    "x": 1473.63,
+    "y": -1924.41,
+    "description": "Public general crafting location.",
+    "link": "#"
+  },
+  {
+    "id": "courthouse",
+    "name": "San Andreas Governmental Complex",
+    "category": "government",
+    "categoryLabel": "Government",
+    "subtitle": "Department of Justice",
+    "x": -550.1532,
+    "y": -196.0362,
+    "description": "State courthouse used for judicial proceedings and Department of Justice services.",
+    "link": "https://docs.equinoxroleplay.com/san-andreas-district-courts"
+  },
+  {
+    "id": "davis-supermarket",
+    "name": "Davis Supermarket",
+    "category": "business",
+    "categoryLabel": "Business",
+    "subtitle": "Grocery Store",
+    "x": 53.25,
+    "y": -1767.07,
+    "description": "Public supermarket serving the Davis area.",
+    "link": "#"
+  },
+  {
+    "id": "plastic-surgery",
+    "name": "Plastic Surgery",
+    "category": "public-service",
+    "categoryLabel": "Public Service",
+    "subtitle": "Civilian Services",
+    "x": -682.26,
+    "y": -187.05,
+    "description": "Public appearance and cosmetic service location.",
+    "link": "#"
+  },
+  {
+    "id": "bolingbroke",
+    "name": "Bolingbroke Penitentiary",
+    "category": "corrections",
+    "categoryLabel": "Corrections",
+    "subtitle": "State Correctional Facility",
+    "x": 1746.81,
+    "y": 2519.49,
+    "description": "San Andreas state correctional facility.",
+    "link": "#"
+  },
+  {
+    "id": "vespucci-medical",
+    "name": "Vespucci Medical",
+    "category": "medical",
+    "categoryLabel": "Medical",
+    "subtitle": "Medical Center",
+    "x": -795.21,
+    "y": -1222.48,
+    "description": "Medical facility serving Vespucci and the western Los Santos area.",
+    "link": "#"
+  },
+  {
+    "id": "911-autos",
+    "name": "911 Autos",
+    "category": "dealership",
+    "categoryLabel": "Dealership",
+    "subtitle": "Police & EMS Vehicle Dealership",
+    "x": -55.99,
+    "y": -1096.59,
+    "description": "Specialized vehicle dealership for authorized police and emergency-service fleets.",
+    "link": "#"
+  },
+  {
+    "id": "luxury-autos",
+    "name": "Luxury Autos",
+    "category": "dealership",
+    "categoryLabel": "Dealership",
+    "subtitle": "Luxury & Performance Vehicles",
+    "x": -1257.4,
+    "y": -369.12,
+    "description": "Dealership specializing in luxury and performance vehicles.",
+    "link": "#"
+  },
+  {
+    "id": "boat-dealer",
+    "name": "Boat Dealer",
+    "category": "dealership",
+    "categoryLabel": "Dealership",
+    "subtitle": "Marine Dealership",
+    "x": -739.55,
+    "y": -1333.75,
+    "description": "Marine dealership for boats and other watercraft.",
+    "link": "#"
+  },
+  {
+    "id": "pegasus-enterprises",
+    "name": "Pegasus Enterprises",
+    "category": "dealership",
+    "categoryLabel": "Dealership",
+    "subtitle": "Aircraft Dealership",
+    "x": -1623.0,
+    "y": -3151.56,
+    "description": "Aircraft dealership for planes and helicopters.",
+    "link": "#"
+  },
+  {
+    "id": "truck-dealer",
+    "name": "Truck Dealer",
+    "category": "dealership",
+    "categoryLabel": "Dealership",
+    "subtitle": "Commercial Vehicle Dealership",
+    "x": 1214.37,
+    "y": -3204.53,
+    "description": "Dealership for vans, commercial vehicles and industrial trucks.",
+    "link": "#"
   }
 ];
