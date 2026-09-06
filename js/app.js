@@ -355,6 +355,32 @@
         <path d="M10 12v2h4v-2"></path>
       </svg>
     `,
+    "ferris-wheel": `
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="10" r="7"></circle>
+        <circle cx="12" cy="10" r="1.5"></circle>
+    
+        <path d="M12 3v14"></path>
+        <path d="M5 10h14"></path>
+        <path d="m7.1 5.1 9.8 9.8"></path>
+        <path d="m16.9 5.1-9.8 9.8"></path>
+    
+        <path d="M8.5 17 6 22"></path>
+        <path d="M15.5 17 18 22"></path>
+        <path d="M5 22h14"></path>
+      </svg>
+    `,
+    dumbbell: `
+      <svg viewBox="0 0 24 24">
+        <path d="M6 9v6"></path>
+        <path d="M4 8v8"></path>
+        <path d="M18 9v6"></path>
+        <path d="M20 8v8"></path>
+        <path d="M6 12h12"></path>
+        <path d="M2 10v4"></path>
+        <path d="M22 10v4"></path>
+      </svg>
+    `
   };
 
   function getCategoryMeta(category) {
