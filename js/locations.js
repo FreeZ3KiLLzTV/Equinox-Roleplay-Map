@@ -180,15 +180,15 @@ window.EQUINOX_LOCATIONS = [
     "link": "https://docs.equinoxroleplay.com/department-of-corrections"
   },
   {
-    "id": "vespucci-medical",
-    "name": "Vespucci Medical",
+    "id": "pillbox-medical",
+    "name": "Pillbox Medical",
     "category": "medical",
     "categoryLabel": "Medical",
     "icon": "medical",
     "subtitle": "Medical Center",
-    "x": -795.21,
-    "y": -1222.48,
-    "description": "Medical facility serving Vespucci and the western Los Santos area.",
+    "x": 297.13,
+    "y": -584.12,
+    "description": "Medical facility serving the people of Los Santos.",
     "link": "https://docs.equinoxroleplay.com/san-andreas-medical-services"
   },
   {
