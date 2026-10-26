@@ -198,8 +198,8 @@ window.EQUINOX_LOCATIONS = [
     "categoryLabel": "Dealership",
     "icon": "car",
     "subtitle": "Luxury & Performance Vehicles",
-    "x": -2213.51,
-    "y": -387.47,
+    "x": -917.94,
+    "y": -2035.44,
     "description": "Dealership specializing in luxury and performance vehicles.",
     "link": "#"
   },
@@ -258,8 +258,8 @@ window.EQUINOX_LOCATIONS = [
     "categoryLabel": "Dealership",
     "icon": "car",
     "subtitle": "Vehicle Dealership",
-    "x": -1023.468,
-    "y": -1378.659,
+    "x": -1008.32,
+    "y": -1510.26,
     "description": "Public vehicle dealership serving residents of San Andreas.",
     "link": "#"
   },
