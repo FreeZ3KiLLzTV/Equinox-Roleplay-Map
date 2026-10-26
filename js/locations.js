@@ -60,18 +60,6 @@ window.EQUINOX_LOCATIONS = [
     "link": "#"
   },
   {
-    "id": "craw-customs",
-    "name": "Craw Customs",
-    "category": "mechanic",
-    "categoryLabel": "Mechanic",
-    "icon": "wrench",
-    "subtitle": "Custom Automotive Shop",
-    "x": -686.35,
-    "y": -785.94,
-    "description": "Player-operated automotive repair and customization shop.",
-    "link": "#"
-  },
-  {
     "id": "bayside",
     "name": "Bayside",
     "category": "mechanic",
@@ -346,18 +334,6 @@ window.EQUINOX_LOCATIONS = [
     "y": -1096.59,
     "description": "Specialized vehicle dealership for authorized police and emergency-service fleets.",
     "link": "#"
-  },
-  {
-    "id": "sandy-medical",
-    "name": "Sandy Medical",
-    "category": "medical",
-    "categoryLabel": "Medical",
-    "icon": "medical",
-    "subtitle": "Medical Center",
-    "x": 1833.072,
-    "y": 3697.561,
-    "description": "Medical facility serving Sandy Shores and the surrounding Blaine County area.",
-    "link": "https://docs.equinoxroleplay.com/san-andreas-medical-services"
   },
   {
     "id": "dynasty8",
